@@ -79,9 +79,16 @@
 
   <script>
     const foodItems = document.querySelectorAll('.food-list li');
-    foodItems.forEach(item => {
+
+    foodItems.forEach((item, index) => {
+      const isDone = localStorage.getItem('food_' + index);
+      if (isDone === 'true') {
+        item.classList.add('done');
+      }
+
       item.addEventListener('click', () => {
         item.classList.toggle('done');
+        localStorage.setItem('food_' + index, item.classList.contains('done'));
       });
     });
   </script>
