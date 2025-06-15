@@ -31,6 +31,13 @@
       padding: 15px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    li.done {
+      text-decoration: line-through;
+      opacity: 0.6;
     }
 
     a.back-link {
@@ -47,28 +54,37 @@
 
   <h1>Toronto Food Guide 🍽️</h1>
 
-  <h2>🥘 Populair dishes</h2>
-  <ul>
-   <li>Mexican Food – A true Toronto classic ?? (ill see)</li>
-   <li>Butter Tart – A sweet Canadian pastry (ill judge for myself)</li>
-   <li>Poutine – overrated or nahh? </li>
-   <li>Momos – yhyh </li>
-   <li>Punjabi Food – duhh do i need to explain</li>
-   <li>BeaverTails – Fried dough pastries topped with sweet toppings or wtv</li>
+  <h2>🥘 Popular Dishes</h2>
+  <ul class="food-list">
+    <li>Mexican Food – A true Toronto classic (I’ll see)</li>
+    <li>Butter Tart – A sweet Canadian pastry (I’ll judge for myself)</li>
+    <li>Poutine – Overrated or nahh?</li>
+    <li>Momos – yhyh</li>
+    <li>Punjabi Food – Duhh do I need to explain</li>
+    <li>BeaverTails – Fried dough pastries topped with sweet toppings or wtv</li>
   </ul>
 
-  <h2>🍔 Populair Fastfood Restaurants</h2>
-  <ul>
-   <li>Tim Hortons – Coffee and donuts obvs</li>
-   <li>Harvey's – idk i heard its good</li>
-   <li>Boston Pizza – is it gooddd?</li>
-   <li>Chipotle – obvie</li>
-   <li>Lazeez – shoarma spot</li>
-   <li>Chick-fil-A - American chicken restaurant</li>
-  <li>Taco Bell – dikhao</li>
-</ul>
+  <h2>🍔 Popular Fast Food Restaurants</h2>
+  <ul class="food-list">
+    <li>Tim Hortons – Coffee and donuts obvs</li>
+    <li>Harvey's – idk I heard it’s good</li>
+    <li>Boston Pizza – is it gooddd?</li>
+    <li>Chipotle – obvie</li>
+    <li>Lazeez – Shoarma spot</li>
+    <li>Chick-fil-A – American chicken restaurant</li>
+    <li>Taco Bell – Dikhao</li>
+  </ul>
 
   <a class="back-link" href="index.html">⬅️ Back to home</a>
+
+  <script>
+    const foodItems = document.querySelectorAll('.food-list li');
+    foodItems.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('done');
+      });
+    });
+  </script>
 
 </body>
 </html>
