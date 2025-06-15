@@ -31,6 +31,13 @@
       padding: 15px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    li.done {
+      text-decoration: line-through;
+      opacity: 0.6;
     }
 
     a.back-link {
@@ -47,19 +54,27 @@
 
   <h1>Activities I Want to Do in Canada 🇨🇦</h1>
 
- <ul>
-  <li>Visit the CN Tower for city views and try walking on the EdgeWalk for an cool experience</li>
-  <li>Take a boat tour at the Niagara Falls up close</li>
-  <li>Explore Distillery District’s cute shops, galleries</li>
-  <li>Go to Gage Park</li>
-  <li>Wander through Kensington Market </li>
-  <li>Picnic in High Park</li>
-  <li>Visit museums and/or art galleries in downtown Toronto</li>
-  <li>Go karting</li>
- </ul>
-
+  <ul id="activities-list">
+    <li>Visit the CN Tower for city views and try walking on the EdgeWalk for a cool experience</li>
+    <li>Take a boat tour at Niagara Falls up close</li>
+    <li>Explore Distillery District’s cute shops and galleries</li>
+    <li>Go to Gage Park</li>
+    <li>Wander through Kensington Market</li>
+    <li>Picnic in High Park</li>
+    <li>Visit museums and art galleries in downtown Toronto</li>
+    <li>Go karting</li>
+  </ul>
 
   <a class="back-link" href="index.html">⬅️ Back to home</a>
+
+  <script>
+    const activities = document.querySelectorAll('#activities-list li');
+    activities.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('done');
+      });
+    });
+  </script>
 
 </body>
 </html>
