@@ -69,9 +69,18 @@
 
   <script>
     const activities = document.querySelectorAll('#activities-list li');
-    activities.forEach(item => {
+
+    // Load saved states from localStorage
+    activities.forEach((item, index) => {
+      const isDone = localStorage.getItem('activity_' + index);
+      if (isDone === 'true') {
+        item.classList.add('done');
+      }
+
       item.addEventListener('click', () => {
         item.classList.toggle('done');
+        // Save new state to localStorage
+        localStorage.setItem('activity_' + index, item.classList.contains('done'));
       });
     });
   </script>
