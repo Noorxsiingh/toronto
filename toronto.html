@@ -31,6 +31,13 @@
       padding: 15px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    li.done {
+      text-decoration: line-through;
+      opacity: 0.6;
     }
 
     a.back-link {
@@ -47,10 +54,10 @@
 
   <h1>Nice Places in Toronto 🇨🇦</h1>
 
-  <ul>
+  <ul id="places-list">
     <li>CN Tower – Stunning panoramic views of the city (CN Tower nu Sat Sri Akaal kehni aa)</li>
-    <li>Niagara Falls –  Waterfalls de darshan krne</li>
-    <li>Distillery District – Historic factories transformed into shops, art galleries, and vibrant atmospher (i wanna see that)</li>
+    <li>Niagara Falls – Waterfalls de darshan krne</li>
+    <li>Distillery District – Historic factories transformed into shops, art galleries, and vibrant atmosphere (i wanna see that)</li>
     <li>Gage Park – Do i need to explain</li>
     <li>Eat at Kensington Market – Looks nice</li>
     <li>Ripley's Aquarium – Underwater world</li>
@@ -58,6 +65,15 @@
   </ul>
 
   <a class="back-link" href="index.html">⬅️ Back to home</a>
+
+  <script>
+    const places = document.querySelectorAll('#places-list li');
+    places.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('done');
+      });
+    });
+  </script>
 
 </body>
 </html>
