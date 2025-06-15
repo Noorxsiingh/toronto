@@ -58,7 +58,7 @@
     <li>CN Tower – Stunning panoramic views of the city (CN Tower nu Sat Sri Akaal kehni aa)</li>
     <li>Niagara Falls – Waterfalls de darshan krne</li>
     <li>Distillery District – Historic factories transformed into shops, art galleries, and vibrant atmosphere (i wanna see that)</li>
-    <li>Gage Park – Do i need to explain</li>
+    <li>Gage Park – Do I need to explain</li>
     <li>Eat at Kensington Market – Looks nice</li>
     <li>Ripley's Aquarium – Underwater world</li>
     <li>High Park – Ethe sehar krni aa</li>
@@ -68,9 +68,17 @@
 
   <script>
     const places = document.querySelectorAll('#places-list li');
-    places.forEach(item => {
+
+    // Load saved states from localStorage
+    places.forEach((item, index) => {
+      const isDone = localStorage.getItem('place_' + index);
+      if (isDone === 'true') {
+        item.classList.add('done');
+      }
+
       item.addEventListener('click', () => {
         item.classList.toggle('done');
+        localStorage.setItem('place_' + index, item.classList.contains('done'));
       });
     });
   </script>
