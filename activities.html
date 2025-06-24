@@ -31,13 +31,6 @@
       padding: 15px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    li.done {
-      text-decoration: line-through;
-      opacity: 0.6;
     }
 
     a.back-link {
@@ -54,36 +47,38 @@
 
   <h1>Activities I Want to Do in Canada 🇨🇦</h1>
 
-  <ul id="activities-list">
-    <li>Visit the CN Tower for city views and try walking on the EdgeWalk for a cool experience</li>
-    <li>Take a boat tour at Niagara Falls up close</li>
-    <li>Explore Distillery District’s cute shops and galleries</li>
-    <li>Go to Gage Park</li>
-    <li>Wander through Kensington Market</li>
-    <li>Picnic in High Park</li>
-    <li>Visit museums and art galleries in downtown Toronto</li>
-    <li>Go karting</li>
-  </ul>
+ <ul>
+  <li>Visit the CN Tower for stunning city views and try walking on the EdgeWalk for an unforgettable experience</li>
+  <li>Take a boat tour to experience the power of Niagara Falls up close</li>
+  <li>Explore the Distillery District’s charming shops, galleries, and vibrant art scene</li>
+  <li>Relax in Gage Park while enjoying beautiful skyline views</li>
+  <li>Wander through Kensington Market and sample delicious local foods</li>
+  <li>Discover fascinating marine life at Ripley’s Aquarium</li>
+  <li>Enjoy a peaceful stroll or have a picnic in High Park</li>
+  <li>Visit museums and art galleries in downtown Toronto to experience local culture</li>
+  <li>Go karting</li>
+  <li>Aquarium – Immersive underwater exhibits with sharks and colorful marine life</li>
+  <li>Centre Island – Relaxing island park with beaches, bike paths, and skyline views</li>
+  <li>Nathan Phillips Square – Iconic city square with the Toronto sign and skating rink</li>
+  <li>Dundas Square – Busy public square with big screens, events, and street performers</li>
+  <li>High Park – Large urban park with trails, gardens, and a small zoo</li>
+  <li>Small Palaces – Charming historic houses and estates to explore</li>
+  <li>Tobermory & Flowerpot Island – Crystal-clear waters, hiking, and unique rock formations</li>
+  <li>Burlington – Charming lakeside city with waterfront parks and trails</li>
+  <li>Kariya Park – Peaceful Japanese garden with cherry blossoms and ponds</li>
+  <li>Brampton Downtown – Local shops, restaurants, and community events</li>
+  <li>Mono Cliffs – Scenic park with cliffs, forests, and hiking trails</li>
+  <li>Farm for Fruit Picking – Seasonal farms where you can pick fresh fruit</li>
+  <li>Blue Mountain – Popular resort for skiing, hiking, and village shops</li>
+  <li>Muskoka – Beautiful cottage country with lakes, forests, and small towns</li>
+  <li>Small Towns Nearby – Quaint villages perfect for a relaxing day trip</li>
+  <li>Professors Lake – Man-made lake with a beach and walking trails</li>
+
+
+ </ul>
+
 
   <a class="back-link" href="index.html">⬅️ Back to home</a>
-
-  <script>
-    const activities = document.querySelectorAll('#activities-list li');
-
-    // Load saved states from localStorage
-    activities.forEach((item, index) => {
-      const isDone = localStorage.getItem('activity_' + index);
-      if (isDone === 'true') {
-        item.classList.add('done');
-      }
-
-      item.addEventListener('click', () => {
-        item.classList.toggle('done');
-        // Save new state to localStorage
-        localStorage.setItem('activity_' + index, item.classList.contains('done'));
-      });
-    });
-  </script>
 
 </body>
 </html>
