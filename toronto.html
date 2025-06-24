@@ -31,13 +31,6 @@
       padding: 15px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    li.done {
-      text-decoration: line-through;
-      opacity: 0.6;
     }
 
     a.back-link {
@@ -54,34 +47,24 @@
 
   <h1>Nice Places in Toronto 🇨🇦</h1>
 
-  <ul id="places-list">
-    <li>CN Tower – Stunning panoramic views of the city (CN Tower nu Sat Sri Akaal kehni aa)</li>
-    <li>Niagara Falls – Waterfalls de darshan krne</li>
-    <li>Distillery District – Historic factories transformed into shops, art galleries, and vibrant atmosphere (i wanna see that)</li>
-    <li>Gage Park – Do I need to explain</li>
-    <li>Eat at Kensington Market – Looks nice</li>
-    <li>Ripley's Aquarium – Underwater world</li>
-    <li>High Park – Ethe sehar krni aa</li>
+  <ul>
+    <li>CN Tower – Stunning panoramic views of the city</li>
+    <li>Niagara Falls – Iconic waterfalls</li>
+    <li>Distillery District – Historic factories transformed into shops, art galleries, and vibrant atmosphere</li>
+    <li>Gage Park – Scenic park with natural islands, a beach, and skyline views</li>
+    <li>Eat at Kensington Market – Eclectic and lively neighborhood full of diverse food and culture</li>
+    <li>Ripley's Aquarium – Immersive underwater world located in downtown</li>
+    <li>High Park – Large urban park featuring walking trails</li>
+    <li>Maid of the Mist – Famous boat ride that brings you close to the falls</li>
+    <li>Behind the Falls – Tunnels and viewing decks right behind the waterfalls</li>
+    <li>White Water Walk – Scenic boardwalk along the raging rapids</li>
+    <li>Giant Wheel – Ferris wheel with panoramic views of the falls</li>
+    <li>Niagara-on-the-Lake – Charming historic town with shops and wineries</li>
+
+
   </ul>
 
   <a class="back-link" href="index.html">⬅️ Back to home</a>
-
-  <script>
-    const places = document.querySelectorAll('#places-list li');
-
-    // Load saved states from localStorage
-    places.forEach((item, index) => {
-      const isDone = localStorage.getItem('place_' + index);
-      if (isDone === 'true') {
-        item.classList.add('done');
-      }
-
-      item.addEventListener('click', () => {
-        item.classList.toggle('done');
-        localStorage.setItem('place_' + index, item.classList.contains('done'));
-      });
-    });
-  </script>
 
 </body>
 </html>
